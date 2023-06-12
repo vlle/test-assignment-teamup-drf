@@ -12,4 +12,8 @@
 
 ### Чего здесь нет (а хотелось бы)
 - Документации к функциям на английском
-- Корректных тестов
+- Чуть более бережного отношения к тестам и pyproject.toml
+
+### Демонстрация запросов
+
+[![asciicast](https://asciinema.org/a/KK34pX13WfU5uwW2yM1IRTK5y.svg)](https://asciinema.org/a/KK34pX13WfU5uwW2yM1IRTK5y)
