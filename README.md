@@ -1,7 +1,7 @@
 ## Тестовое для TeamUp
 
 ### Как пользоваться:
-1) Первый вариант: запустить через ``` docker build -t test-iq-eq . && docker run -p 8000:8000 test-iq-eq  `` 
+1) Первый вариант: запустить через ``` docker build -t test-iq-eq . && docker run -p 8000:8000 test-iq-eq  ```
 2) Второй вариант: запустить через ``` poetry install && poetry shell && cd test_iqeq && python manage.py runserver ```
 
 ### Что здесь есть:
