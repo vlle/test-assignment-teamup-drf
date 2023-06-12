@@ -28,6 +28,11 @@ class IQSerializer(serializers.ModelSerializer):
 
 class EQSerializer(serializers.ModelSerializer):
     def validate_eq(self, value):
+        if len(value) != 5:
+            raise serializers.ValidationError(
+                "This value len should be  5"
+            )
+
         for v in value:
             if v not in set(["а", "б", "в", "г", "д"]):
                 raise serializers.ValidationError(

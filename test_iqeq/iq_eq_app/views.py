@@ -36,6 +36,8 @@ def initalize_user(request):
 @api_view(["POST"])
 def save_iq(request):
     user = TestUser.objects.filter(login=request.data["login"]).first()
+    if not user:
+        return Response(status=status.HTTP_404_NOT_FOUND)
     user.iq_test_time = datetime.now()
     serializer = IQSerializer(user, data=request.data)
     if serializer.is_valid():
@@ -48,6 +50,8 @@ def save_iq(request):
 @api_view(["POST"])
 def save_eq(request):
     user = TestUser.objects.filter(login=request.data["login"]).first()
+    if not user:
+        return Response(status=status.HTTP_404_NOT_FOUND)
     user.eq_test_time = datetime.now()
     serializer = EQSerializer(user, data=request.data)
     if serializer.is_valid():
@@ -59,7 +63,10 @@ def save_eq(request):
 
 @api_view(["GET"])
 def view_user(request):
-    user = TestUser.objects.filter(login=request.data["login"]).first()
+    try:
+        user = TestUser.objects.filter(login=request.query_params["login"]).first()
+    except KeyError:
+        return Response(status=status.HTTP_404_NOT_FOUND)
     if not user:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
