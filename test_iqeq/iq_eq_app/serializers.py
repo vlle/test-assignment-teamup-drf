@@ -1,5 +1,6 @@
-from iq_eq_app.models import TestUser
 from rest_framework import serializers
+
+from iq_eq_app.models import TestUser
 
 
 class LoginSerializer(serializers.ModelSerializer):
@@ -29,9 +30,7 @@ class IQSerializer(serializers.ModelSerializer):
 class EQSerializer(serializers.ModelSerializer):
     def validate_eq(self, value):
         if len(value) != 5:
-            raise serializers.ValidationError(
-                "This value len should be  5"
-            )
+            raise serializers.ValidationError("This value len should be  5")
 
         for v in value:
             if v not in set(["а", "б", "в", "г", "д"]):

@@ -1,10 +1,11 @@
 import random
 from datetime import datetime
-from django.urls import reverse
-from iq_eq_app.models import TestUser
 
+from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
+
+from iq_eq_app.models import TestUser
 
 
 class TestIQEQ(APITestCase):

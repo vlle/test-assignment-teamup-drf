@@ -1,17 +1,14 @@
 import random
-from datetime import datetime
 import string
+from datetime import datetime
 
-from iq_eq_app.models import TestUser
-from iq_eq_app.serializers import (
-    EQSerializer,
-    IQSerializer,
-    LoginSerializer,
-    TestUserSerializer,
-)
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+
+from iq_eq_app.models import TestUser
+from iq_eq_app.serializers import (EQSerializer, IQSerializer, LoginSerializer,
+                                   TestUserSerializer)
 
 
 def randomword(length):

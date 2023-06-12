@@ -1,4 +1,5 @@
 from django.urls import path
+
 from iq_eq_app import views
 
 urlpatterns = [
