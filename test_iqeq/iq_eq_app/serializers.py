@@ -63,4 +63,4 @@ class TestUserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = TestUser
-        fields = ["login", "iq", "eq", "created"]
+        fields = ["login", "iq", "eq", "eq_test_time", "iq_test_time"]

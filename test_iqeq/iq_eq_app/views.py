@@ -1,4 +1,5 @@
 import random
+from datetime import datetime
 import string
 
 from iq_eq_app.models import TestUser
@@ -35,6 +36,7 @@ def initalize_user(request):
 @api_view(["POST"])
 def save_iq(request):
     user = TestUser.objects.filter(login=request.data["login"]).first()
+    user.iq_test_time = datetime.now()
     serializer = IQSerializer(user, data=request.data)
     if serializer.is_valid():
         serializer.save()
@@ -46,6 +48,7 @@ def save_iq(request):
 @api_view(["POST"])
 def save_eq(request):
     user = TestUser.objects.filter(login=request.data["login"]).first()
+    user.eq_test_time = datetime.now()
     serializer = EQSerializer(user, data=request.data)
     if serializer.is_valid():
         serializer.save()

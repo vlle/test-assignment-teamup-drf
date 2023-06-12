@@ -1,10 +1,9 @@
 [tool.poetry]
-name = "test-iq-eq"
+name = "test-iqeq"
 version = "0.1.0"
 description = ""
 authors = ["artemiikulikov <aapqwhat@gmail.com>"]
 readme = "README.md"
-packages = [{include = "test_iq_eq"}]
 
 [tool.poetry.dependencies]
 python = "~3.10"
