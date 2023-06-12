@@ -44,6 +44,3 @@ class TestIQEQ(APITestCase):
         data = {"login": "nonexistent_user"}
         response = self.client.get(url, data)
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-
-
-# Create your tests here.
