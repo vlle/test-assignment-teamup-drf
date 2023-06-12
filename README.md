@@ -16,8 +16,14 @@
 
 ### Примеры запросов
 ```http GET 'http://127.0.0.1:8000/api/get_test_res?login=ooykbilkja'```
+
+
 ```http POST 'http://127.0.0.1:8000/api/fill_eq' eq=аббаб login=ooykbilkja```
+
+
 ```http POST 'http://127.0.0.1:8000/api/fill_iq' iq=40 login=ooykbilkja```
+
+
 ```http POST 'http://127.0.0.1:8000/api/create_user'```
 
 ### Демонстрация 
